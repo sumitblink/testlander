@@ -1,131 +1,457 @@
-<!-- DNI Call Tracking Tag: Healthcare Lander -->
-<!-- Replace your phone numbers with this structure -->
- <head>
-  <script type="text/javascript" src="https://cy9n0.rdtk.io/track.js?rtkcmpid=6883a9f9969fe3c7bd0bab49"></script>
- </head>
-<span class="tracking-number">(555) 123-4567</span>
-<header>
-<!-- Or as a clickable link -->
-<a href="tel:+15551234567" class="tracking-number">(555) 123-4567</a>
-
-<!-- Place this script before closing </body> tag -->
-<script>
-(function() {
-  'use strict';
-  
-  var DNI = {
-    config: {
-      tagCode: 'healthcare_lander',
-      apiUrl: 'https://db49e81b-0f19-4f98-81dc-9b5f42c77491-00-229f5d5g77v1k.spock.replit.dev/api/dni/track',
-      timeout: 5000,
-      captureUserData: true,
-      debug: false
-    },
-    
-    init: function() {
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', this.replaceNumbers.bind(this));
-      } else {
-        this.replaceNumbers();
-      }
-    },
-    
-    replaceNumbers: function() {
-      var elements = document.querySelectorAll('.tracking-number, [data-tracking-number]');
-      if (elements.length === 0) {
-
-        return;
-      }
-      
-      this.getTrackingNumber(function(response) {
-        if (response.success && response.formattedNumber) {
-          for (var i = 0; i < elements.length; i++) {
-            elements[i].textContent = response.formattedNumber;
-            // Update href if it's a link
-            if (elements[i].tagName === 'A') {
-              elements[i].href = 'tel:' + response.phoneNumber;
-            }
-          }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Medicare Benefits Card</title>
+    <script src="https://db49e81b-0f19-4f98-81dc-9b5f42c77491-00-229f5d5g77v1k.spock.replit.dev/js/t.js" data-campaign="928a699e-e241-46ab-bc54-9f6779d38b32" async></script>
+    <script type="text/javascript" src="https://cy9n0.rdtk.io/track.js?rtkcmpid=6883a9f9969fe3c7bd0bab49"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      });
-    },
-    
-    getTrackingNumber: function(callback) {
-      var requestData = {
-        tagCode: this.config.tagCode,
-        sessionId: this.getSessionId(),
-        domain: window.location.hostname,
-        referrer: document.referrer,
-        userAgent: navigator.userAgent
-      };
-      
-      if (this.config.captureUserData) {
-        var urlParams = new URLSearchParams(window.location.search);
-        // Standard UTM parameters
-        requestData.utmSource = urlParams.get('utm_source');
-        requestData.utmMedium = urlParams.get('utm_medium');
-        requestData.utmCampaign = urlParams.get('utm_campaign');
-        requestData.utmContent = urlParams.get('utm_content');
-        requestData.utmTerm = urlParams.get('utm_term');
-        
-        // Custom URL parameters (auto-generated from configuration)
-        requestData.publisher = urlParams.get('publisher');
-        requestData.gclid = urlParams.get('gclid');
-        requestData.fbclid = urlParams.get('fbclid');
-        requestData.msclkid = urlParams.get('msclkid');
-        requestData.ttclid = urlParams.get('ttclid');
-        requestData.twclid = urlParams.get('twclid');
-        requestData.liclid = urlParams.get('liclid');
-        requestData.subid = urlParams.get('subid');
-        requestData.clickid = urlParams.get('clickid');
-        requestData.affid = urlParams.get('affid');
-        requestData.pubid = urlParams.get('pubid');
-        requestData.source = urlParams.get('source');
-        requestData.medium = urlParams.get('medium');
-        requestData.campaign = urlParams.get('campaign');
-        requestData.content = urlParams.get('content');
-        requestData.term = urlParams.get('term');
-        requestData.keyword = urlParams.get('keyword');
-        requestData.placement = urlParams.get('placement');
-        requestData.adgroup = urlParams.get('adgroup');
-        requestData.creative = urlParams.get('creative');
-        requestData.device = urlParams.get('device');
-        requestData.network = urlParams.get('network');
-        requestData.matchtype = urlParams.get('matchtype');
-        requestData.adposition = urlParams.get('adposition');
-        requestData.target = urlParams.get('target');
-        requestData.targetid = urlParams.get('targetid');
-        requestData.loc_physical_ms = urlParams.get('loc_physical_ms');
-        requestData.loc_interest_ms = urlParams.get('loc_interest_ms');
-      }
-      
-      fetch(this.config.apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestData),
-        mode: 'cors'
-      })
-      .then(function(response) {
-        return response.json();
-      })
-      .then(callback)
-      .catch(function(error) {
 
-      });
-    },
-    
-    getSessionId: function() {
-      var sessionId = sessionStorage.getItem('dni_session_id');
-      if (!sessionId) {
-        sessionId = 'dni_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-        sessionStorage.setItem('dni_session_id', sessionId);
-      }
-      return sessionId;
-    }
-  };
-  
-  DNI.init();
-})();
-</script>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .warning {
+            color: #d32f2f;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .main-title {
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+
+        .main-title .year {
+            color: #d32f2f;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .main-title .benefits-text {
+            color: #d32f2f;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .main-title .description {
+            color: #333;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .progress-section {
+            margin-bottom: 40px;
+        }
+
+        .complete-text {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .progress-fill {
+            width: 35%;
+            height: 100%;
+            background-color: #4285f4;
+        }
+
+        .question-section {
+            margin-bottom: 30px;
+        }
+
+        .question {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #c53030;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #9c2626;
+        }
+
+        .benefits-box {
+            background-color: #e8f5e8;
+            border: 2px solid #c8e6c9;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .benefits-title {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .benefits-amount {
+            color: #2e7d32;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .benefits-subtitle {
+            color: #4caf50;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .live-counter {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .congrats-section {
+            display: none;
+        }
+
+        .congrats-box {
+            border: 3px solid #4285f4;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            background-color: white;
+        }
+
+        .congrats-title {
+            text-align: center;
+            color: #4caf50;
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .free-text {
+            text-align: center;
+            color: #d32f2f;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .claim-title {
+            text-align: center;
+            color: #333;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .phone-number {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .phone-number .phone-icon {
+            color: #666;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+
+        .phone-number .number {
+            color: #d32f2f;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .call-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background-color: #c53030;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .call-button:hover {
+            background-color: #9c2626;
+        }
+
+        .call-button .phone-icon {
+            margin-right: 10px;
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .call-instruction {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .spot-held {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .spot-held .time {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .logos img {
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .card-image {
+            text-align: center;
+        }
+
+        .card-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .main-title .year,
+            .main-title .benefits-text {
+                font-size: 36px;
+            }
+            
+            .main-title .description {
+                font-size: 24px;
+            }
+            
+            .question {
+                font-size: 24px;
+            }
+            
+            .benefits-amount {
+                font-size: 28px;
+            }
+
+            .congrats-title {
+                font-size: 32px;
+            }
+
+            .claim-title {
+                font-size: 24px;
+            }
+
+            .phone-number .number {
+                font-size: 28px;
+            }
+
+            .call-button {
+                font-size: 20px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="warning">
+            Warning: Enrollment closes on August 12, 2025
+        </div>
+
+        <div class="main-title">
+            <div class="year">2025</div>
+            <div class="benefits-text">Medicare Benefits Card</div>
+            <div class="description">provides up to $2,500</div>
+            <div class="description">to spend on Groceries, Prescriptions, & Other</div>
+            <div class="description">Essentials.</div>
+        </div>
+
+        <div class="progress-section">
+            <div class="complete-text">Complete</div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="question-section" id="question-section">
+            <div class="question">Are You on Medicare Parts A and B ?</div>
+            <div class="button-group">
+                <button class="btn" id="yes-btn">YES</button>
+                <button class="btn" id="no-btn">NO</button>
+            </div>
+        </div>
+
+        <div class="benefits-box" id="benefits-box">
+            <div class="benefits-title">🎉 Benefits Distributed This Month</div>
+            <div class="benefits-amount">$268,529,918</div>
+            <div class="benefits-subtitle">given to Americans this month</div>
+            <div class="live-counter">◉ Live Counter ◉</div>
+        </div>
+
+        <div class="congrats-section" id="congrats-section">
+            <div class="congrats-box">
+                <div class="congrats-title">Congratulations!</div>
+                <div class="free-text">FREE</div>
+                <div class="claim-title">Call Now to Claim Your Free Allowance</div>
+                
+                <div class="phone-number">
+                    <span class="phone-icon">📞</span>
+                    <!-- <a href="tel:+15551234567" class="tracking-number">(856) 644-1573</a> -->
+                    <span class="phone-icon">📞</span>
+                </div>
+                
+                <a href="tel:+18334422096" class="call-button">
+                    <span class="phone-icon">📞</span> Call Now to Claim
+                </a>
+                
+                <div class="disclaimer">
+                    By clicking the call button, you authorize us to contact you via phone, text message, and/or prerecorded message using automated technology, even if your number is on a Do Not Call list. Consent is not required to make a purchase. Message and data rates may apply. Reply STOP to opt out.
+                </div>
+                
+                <div class="call-instruction">
+                    CALL NOW by Clicking the PHONE NUMBER above
+                </div>
+                
+                <div class="spot-held">
+                    Your spot is being held for <span class="time" id="countdown">1:47</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="logos">
+            <img src="https://www.usplanswithbenefits.com/images/walmart-logo.png" alt="Walmart">
+            <img src="https://www.usplanswithbenefits.com/images/cvs-logo.png" alt="CVS Pharmacy">
+            <img src="https://www.usplanswithbenefits.com/images/target-logo.png" alt="Target">
+        </div>
+
+        <div class="card-image">
+            <img src="https://www.usplanswithbenefits.com/images/benefits-card-v2.png" alt="Medicare Benefits Card">
+        </div>
+    </div>
+
+    <script>
+        function showCongrats() {
+            document.querySelector('.main-title').style.display = 'none';
+            document.getElementById('question-section').style.display = 'none';
+            document.getElementById('benefits-box').style.display = 'none';
+            document.getElementById('congrats-section').style.display = 'block';
+            
+            // Fill the progress bar completely
+            document.querySelector('.progress-fill').style.width = '100%';
+            
+            startCountdown();
+        }
+
+        function startCountdown() {
+            let minutes = 1;
+            let seconds = 47;
+            const countdownElement = document.getElementById('countdown');
+            
+            const timer = setInterval(function() {
+                if (seconds === 0) {
+                    if (minutes === 0) {
+                        clearInterval(timer);
+                        countdownElement.textContent = "0:00";
+                        return;
+                    }
+                    minutes--;
+                    seconds = 59;
+                } else {
+                    seconds--;
+                }
+                
+                const displaySeconds = seconds < 10 ? '0' + seconds : seconds;
+                countdownElement.textContent = minutes + ':' + displaySeconds;
+            }, 1000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('yes-btn').onclick = function() {
+                showCongrats();
+            };
+
+            document.getElementById('no-btn').onclick = function() {
+                alert('Thank you for your response. This offer is only available for Medicare Parts A and B recipients.');
+            };
+
+            let counter = 268529918;
+            const counterElement = document.querySelector('.benefits-amount');
+            
+            setInterval(function() {
+                counter += Math.floor(Math.random() * 100) + 50;
+                counterElement.textContent = '$' + counter.toLocaleString();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
