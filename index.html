@@ -6,6 +6,30 @@
     <title>2025 Medicare Benefits Card</title>
     <script src="https://db49e81b-0f19-4f98-81dc-9b5f42c77491-00-229f5d5g77v1k.spock.replit.dev/js/t.js" data-campaign="928a699e-e241-46ab-bc54-9f6779d38b32" async></script>
     <script type="text/javascript" src="https://cy9n0.rdtk.io/track.js?rtkcmpid=6883a9f9969fe3c7bd0bab49"></script>
+    <Script id="location-params" strategy="afterInteractive">
+        {`
+          fetch("https://pro.ip-api.com/json/?key=YfaAgEjllgeNS6P")
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(location) {
+              const url = new URL(window.location.href);
+              url.searchParams.set('zipcode', parseInt(location['zip']));
+              window.history.pushState(null, '', url.toString());
+            })
+            .then(function() {
+              const currentURL = window.location.href;
+              const urlParams = currentURL.split('?');
+              if (urlParams.length > 1) {
+                const params = urlParams.at(-1);
+                const buttons = document.getElementsByClassName("lp-button-react");
+                for (button of buttons) {
+                  button.href += \⁠ ?\${params}\ ⁠;
+                }
+              }
+            });
+        `}
+</Script>
     <style>
         * {
             margin: 0;
